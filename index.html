@@ -15,7 +15,7 @@
         <nav>
             <div>
                 <div class="bg-[#F85559] rounded-full mx-auto max-w-screen-2xl p-5">
-                    <div class="flex justify-between items-center">
+                    <div class="flex-col md:flex-row lg:flex  justify-between items-center">
                         <div class="text-xl text-white flex gap-5">
                             <a href="">
                                 <h4>Home</h4>
@@ -47,6 +47,39 @@
 
     </header>
     <main>
+        <section class="mt-10">
+            <div class="carousel w-auto">
+                <div id="slide1" class="carousel-item relative w-full">
+                  <img src="/images/banner1.png" class="w-full" />
+                  <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide4" class="btn btn-circle">❮</a> 
+                    <a href="#slide2" class="btn btn-circle">❯</a>
+                  </div>
+                </div> 
+                <div id="slide2" class="carousel-item relative w-full">
+                  <img src="/images/banner2.png" class="w-full" />
+                  <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide1" class="btn btn-circle">❮</a> 
+                    <a href="#slide3" class="btn btn-circle">❯</a>
+                  </div>
+                </div> 
+                <div id="slide3" class="carousel-item relative w-full">
+                  <img src="/images/banner3.png" class="w-full" />
+                  <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide2" class="btn btn-circle">❮</a> 
+                    <a href="#slide4" class="btn btn-circle">❯</a>
+                  </div>
+                </div> 
+                <div id="slide4" class="carousel-item relative w-full">
+                  <img src="/images/banner4.png" class="w-full" />
+                  <div class="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+                    <a href="#slide3" class="btn btn-circle">❮</a> 
+                    <a href="#slide1" class="btn btn-circle">❯</a>
+                  </div>
+                </div>
+              </div>
+
+        </section>
         <section class="mt-10">
             <div class="justify-center">
                 <div class="flex justify-around">
@@ -233,6 +266,11 @@
                                     <h3 class="text-[#F85559]">Details</h3>
                                 </a>
                                 </div>
+                                </div>
+                                </div>
+                                <div class="flex justify-center mt-7">
+                                    <button class="btn btn-error text-white">Shop Now</button>
+
                                 </div>
                                 </div>
                                 
