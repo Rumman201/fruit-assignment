@@ -164,6 +164,35 @@
             outline: none;
         }
 
+        .mobile-menu-shell {
+            border: 1px solid rgba(228, 207, 176, 0.8);
+            background: rgba(255, 255, 255, 0.94);
+            box-shadow: 0 12px 22px rgba(16, 24, 40, 0.12);
+        }
+
+        .mobile-menu-shell summary {
+            list-style: none;
+        }
+
+        .mobile-menu-shell summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .mobile-menu-link {
+            display: block;
+            border-radius: 0.7rem;
+            padding: 0.5rem 0.65rem;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #2c3a4d;
+            transition: background-color 0.2s ease, color 0.2s ease;
+        }
+
+        .mobile-menu-link:hover {
+            background: rgba(248, 85, 89, 0.09);
+            color: var(--fruit-red);
+        }
+
         .btn-shell {
             display: inline-flex;
             align-items: center;
@@ -489,6 +518,19 @@
                 </ul>
 
                 <div class="flex items-center gap-3">
+                    <details class="mobile-menu-shell relative rounded-full p-1 lg:hidden">
+                        <summary class="inline-flex h-9 w-9 cursor-pointer items-center justify-center rounded-full text-slate-700"
+                            aria-label="Toggle mobile menu">
+                            <i class="fa-solid fa-bars"></i>
+                        </summary>
+                        <div class="absolute right-0 top-12 w-52 rounded-2xl bg-white p-2">
+                            <a class="mobile-menu-link" href="#home">Home</a>
+                            <a class="mobile-menu-link" href="#gallery">Gallery</a>
+                            <a class="mobile-menu-link" href="#shop">Shop</a>
+                            <a class="mobile-menu-link" href="#team">Team</a>
+                            <a class="mobile-menu-link" href="#support">Support</a>
+                        </div>
+                    </details>
                     <label class="search-shell hidden md:inline-flex">
                         <i class="fa-solid fa-magnifying-glass text-xs text-slate-400"></i>
                         <input type="text" placeholder="Search fruit" aria-label="Search fruits" />
@@ -701,7 +743,7 @@
                                 <i class="fa-regular fa-star"></i>
                             </span>
                         </div>
-                        <a href="#" class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-fruit-red">View details
+                        <a href="#support" class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-fruit-red">View details
                             <i class="fa-solid fa-arrow-right text-xs"></i></a>
                     </div>
                 </article>
@@ -724,7 +766,7 @@
                                 <i class="fa-solid fa-star"></i>
                             </span>
                         </div>
-                        <a href="#" class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-fruit-red">View details
+                        <a href="#support" class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-fruit-red">View details
                             <i class="fa-solid fa-arrow-right text-xs"></i></a>
                     </div>
                 </article>
@@ -747,7 +789,7 @@
                                 <i class="fa-regular fa-star"></i>
                             </span>
                         </div>
-                        <a href="#" class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-fruit-red">View details
+                        <a href="#support" class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-fruit-red">View details
                             <i class="fa-solid fa-arrow-right text-xs"></i></a>
                     </div>
                 </article>
@@ -770,14 +812,14 @@
                                 <i class="fa-regular fa-star"></i>
                             </span>
                         </div>
-                        <a href="#" class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-fruit-red">View details
+                        <a href="#support" class="mt-5 inline-flex items-center gap-2 text-sm font-bold text-fruit-red">View details
                             <i class="fa-solid fa-arrow-right text-xs"></i></a>
                     </div>
                 </article>
             </div>
 
             <div class="mt-9 text-center">
-                <a href="#" class="btn-shell">Shop Full Catalog</a>
+                <a href="#gallery" class="btn-shell">Shop Full Catalog</a>
             </div>
         </section>
 
@@ -852,9 +894,12 @@
                             <h3 class="font-heading mt-4 text-xl">Awlad Hossain</h3>
                             <p class="text-sm text-slate-200">Fruit Sourcing Lead</p>
                             <div class="mt-4 flex justify-center gap-3">
-                                <a class="social-link" href="#" aria-label="Awlad on Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                                <a class="social-link" href="#" aria-label="Awlad on Twitter"><i class="fa-brands fa-twitter"></i></a>
-                                <a class="social-link" href="#" aria-label="Awlad on LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                                <a class="social-link" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"
+                                    aria-label="Awlad on Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a class="social-link" href="https://x.com/" target="_blank" rel="noopener noreferrer"
+                                    aria-label="Awlad on Twitter"><i class="fa-brands fa-twitter"></i></a>
+                                <a class="social-link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"
+                                    aria-label="Awlad on LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                             </div>
                         </article>
 
@@ -864,9 +909,12 @@
                             <h3 class="font-heading mt-4 text-xl">Safia Chowdhury</h3>
                             <p class="text-sm text-slate-200">Freshness Analyst</p>
                             <div class="mt-4 flex justify-center gap-3">
-                                <a class="social-link" href="#" aria-label="Safia on Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                                <a class="social-link" href="#" aria-label="Safia on Twitter"><i class="fa-brands fa-twitter"></i></a>
-                                <a class="social-link" href="#" aria-label="Safia on LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                                <a class="social-link" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"
+                                    aria-label="Safia on Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a class="social-link" href="https://x.com/" target="_blank" rel="noopener noreferrer"
+                                    aria-label="Safia on Twitter"><i class="fa-brands fa-twitter"></i></a>
+                                <a class="social-link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"
+                                    aria-label="Safia on LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                             </div>
                         </article>
 
@@ -876,9 +924,12 @@
                             <h3 class="font-heading mt-4 text-xl">Rokib Hossain</h3>
                             <p class="text-sm text-slate-200">Logistics Manager</p>
                             <div class="mt-4 flex justify-center gap-3">
-                                <a class="social-link" href="#" aria-label="Rokib on Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                                <a class="social-link" href="#" aria-label="Rokib on Twitter"><i class="fa-brands fa-twitter"></i></a>
-                                <a class="social-link" href="#" aria-label="Rokib on LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                                <a class="social-link" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"
+                                    aria-label="Rokib on Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a class="social-link" href="https://x.com/" target="_blank" rel="noopener noreferrer"
+                                    aria-label="Rokib on Twitter"><i class="fa-brands fa-twitter"></i></a>
+                                <a class="social-link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"
+                                    aria-label="Rokib on LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                             </div>
                         </article>
 
@@ -888,12 +939,29 @@
                             <h3 class="font-heading mt-4 text-xl">Chaity</h3>
                             <p class="text-sm text-slate-200">Customer Success</p>
                             <div class="mt-4 flex justify-center gap-3">
-                                <a class="social-link" href="#" aria-label="Chaity on Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                                <a class="social-link" href="#" aria-label="Chaity on Twitter"><i class="fa-brands fa-twitter"></i></a>
-                                <a class="social-link" href="#" aria-label="Chaity on LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                                <a class="social-link" href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer"
+                                    aria-label="Chaity on Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                                <a class="social-link" href="https://x.com/" target="_blank" rel="noopener noreferrer"
+                                    aria-label="Chaity on Twitter"><i class="fa-brands fa-twitter"></i></a>
+                                <a class="social-link" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"
+                                    aria-label="Chaity on LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                             </div>
                         </article>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="support" class="section-shell mt-16" data-reveal>
+            <div class="glass rounded-[1.6rem] p-6 md:p-8">
+                <p class="text-xs font-bold uppercase tracking-[0.18em] text-fruit-red">Support</p>
+                <h2 class="font-heading mt-2 text-3xl text-fruit-ink md:text-4xl">Need help with your order?</h2>
+                <p class="mt-3 max-w-2xl text-sm leading-relaxed text-slate-600 md:text-base">
+                    Reach our support team for product details, order tracking, replacement requests, and delivery help.
+                </p>
+                <div class="mt-6 flex flex-wrap gap-3">
+                    <a href="mailto:support@fruitburst.com" class="btn-shell">Email Support</a>
+                    <a href="tel:+8801700000000" class="btn-outline-shell">Call +880 1700-000000</a>
                 </div>
             </div>
         </section>
@@ -915,18 +983,18 @@
                     <a class="hover:text-fruit-red" href="#gallery">Gallery</a>
                     <a class="hover:text-fruit-red" href="#shop">Shop</a>
                     <a class="hover:text-fruit-red" href="#team">Team</a>
-                    <a class="hover:text-fruit-red" href="#">Support</a>
+                    <a class="hover:text-fruit-red" href="#support">Support</a>
                 </div>
 
                 <div class="flex items-center gap-3 text-slate-700">
                     <a class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 hover:text-fruit-red"
-                        href="#" aria-label="Visit Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Facebook"><i class="fa-brands fa-facebook-f"></i></a>
                     <a class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 hover:text-fruit-red"
-                        href="#" aria-label="Visit Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit Instagram"><i class="fa-brands fa-instagram"></i></a>
                     <a class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 hover:text-fruit-red"
-                        href="#" aria-label="Visit LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
                     <a class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-300 hover:text-fruit-red"
-                        href="#" aria-label="Visit YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit YouTube"><i class="fa-brands fa-youtube"></i></a>
                 </div>
             </div>
 
