@@ -36,6 +36,21 @@
             scroll-behavior: smooth;
         }
 
+        a:focus-visible,
+        button:focus-visible,
+        summary:focus-visible,
+        input:focus-visible {
+            outline: 3px solid rgba(248, 85, 89, 0.55);
+            outline-offset: 3px;
+            box-shadow: 0 0 0 5px rgba(248, 85, 89, 0.16);
+            border-radius: 0.7rem;
+        }
+
+        .nav-link:focus-visible,
+        .mobile-menu-link:focus-visible {
+            color: var(--fruit-red);
+        }
+
         body {
             margin: 0;
             min-height: 100vh;
@@ -401,6 +416,18 @@
             background: rgba(255, 255, 255, 0.2);
         }
 
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
         [data-reveal] {
             opacity: 0;
             transform: translateY(28px) scale(0.985);
@@ -513,6 +540,7 @@
                     <li><a class="nav-link" href="#gallery">Gallery</a></li>
                     <li><a class="nav-link" href="#shop">Shop</a></li>
                     <li><a class="nav-link" href="#team">Team</a></li>
+                    <li><a class="nav-link" href="about.html">About Page</a></li>
                 </ul>
 
                 <div class="flex items-center gap-3">
@@ -527,6 +555,9 @@
                             <a class="mobile-menu-link" href="#shop">Shop</a>
                             <a class="mobile-menu-link" href="#team">Team</a>
                             <a class="mobile-menu-link" href="#support">Support</a>
+                            <a class="mobile-menu-link" href="about.html">About Page</a>
+                            <a class="mobile-menu-link" href="catalog.html">Catalog Page</a>
+                            <a class="mobile-menu-link" href="delivery.html">Delivery Page</a>
                         </div>
                     </details>
                     <label class="search-shell">
@@ -633,21 +664,33 @@
                 </p>
             </div>
 
-            <div class="carousel w-full overflow-hidden rounded-[2rem] shadow-2xl ring-1 ring-white/80">
-                <div id="slide1" class="carousel-item relative w-full">
+            <div class="carousel w-full overflow-hidden rounded-[2rem] shadow-2xl ring-1 ring-white/80"
+                role="region" aria-roledescription="carousel" aria-label="Seasonal fruit showcase">
+                <div id="slide1" class="carousel-item relative w-full"
+                    role="group" aria-roledescription="slide" aria-label="Slide 1 of 4: Mixed fruit basket">
                     <img src="images/banner1.png" alt="Mixed fruit basket" class="h-[280px] w-full object-cover md:h-[440px]" />
                     <div class="absolute inset-0 bg-gradient-to-r from-black/60 via-black/15 to-black/55"></div>
                     <div class="absolute bottom-8 left-6 right-6 md:bottom-10 md:left-12 md:right-12">
                         <p class="text-xs font-semibold uppercase tracking-[0.18em] text-amber-200">Signature mix</p>
                         <h3 class="font-heading mt-2 text-2xl text-white md:text-4xl">Crisp picks for your weekly table</h3>
                     </div>
-                    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 justify-between">
-                        <a href="#slide4" class="btn btn-circle border-none bg-white/80 text-slate-800 hover:bg-white">&lt;</a>
-                        <a href="#slide2" class="btn btn-circle border-none bg-white/80 text-slate-800 hover:bg-white">&gt;</a>
+                    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 justify-between" role="group"
+                        aria-label="Carousel controls">
+                        <a href="#slide4" class="btn btn-circle border-none bg-white/80 text-slate-800 hover:bg-white"
+                            aria-label="Previous slide" aria-controls="slide4" title="Previous slide">
+                            <span aria-hidden="true">&lt;</span>
+                            <span class="visually-hidden">Previous slide</span>
+                        </a>
+                        <a href="#slide2" class="btn btn-circle border-none bg-white/80 text-slate-800 hover:bg-white"
+                            aria-label="Next slide" aria-controls="slide2" title="Next slide">
+                            <span aria-hidden="true">&gt;</span>
+                            <span class="visually-hidden">Next slide</span>
+                        </a>
                     </div>
                 </div>
 
-                <div id="slide2" class="carousel-item relative w-full">
+                <div id="slide2" class="carousel-item relative w-full"
+                    role="group" aria-roledescription="slide" aria-label="Slide 2 of 4: Citrus and tropical fruits">
                     <img src="images/banner2.png" alt="Citrus and tropical fruit display"
                         class="h-[280px] w-full object-cover md:h-[440px]" />
                     <div class="absolute inset-0 bg-gradient-to-r from-black/55 via-black/10 to-black/55"></div>
@@ -655,13 +698,23 @@
                         <p class="text-xs font-semibold uppercase tracking-[0.18em] text-amber-200">Tropical box</p>
                         <h3 class="font-heading mt-2 text-2xl text-white md:text-4xl">A sweet splash of summer flavors</h3>
                     </div>
-                    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 justify-between">
-                        <a href="#slide1" class="btn btn-circle border-none bg-white/80 text-slate-800 hover:bg-white">&lt;</a>
-                        <a href="#slide3" class="btn btn-circle border-none bg-white/80 text-slate-800 hover:bg-white">&gt;</a>
+                    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 justify-between" role="group"
+                        aria-label="Carousel controls">
+                        <a href="#slide1" class="btn btn-circle border-none bg-white/80 text-slate-800 hover:bg-white"
+                            aria-label="Previous slide" aria-controls="slide1" title="Previous slide">
+                            <span aria-hidden="true">&lt;</span>
+                            <span class="visually-hidden">Previous slide</span>
+                        </a>
+                        <a href="#slide3" class="btn btn-circle border-none bg-white/80 text-slate-800 hover:bg-white"
+                            aria-label="Next slide" aria-controls="slide3" title="Next slide">
+                            <span aria-hidden="true">&gt;</span>
+                            <span class="visually-hidden">Next slide</span>
+                        </a>
                     </div>
                 </div>
 
-                <div id="slide3" class="carousel-item relative w-full">
+                <div id="slide3" class="carousel-item relative w-full"
+                    role="group" aria-roledescription="slide" aria-label="Slide 3 of 4: Premium fruit arrangement">
                     <img src="images/banner3.png" alt="Premium fruits arranged on table"
                         class="h-[280px] w-full object-cover md:h-[440px]" />
                     <div class="absolute inset-0 bg-gradient-to-r from-black/55 via-black/5 to-black/55"></div>
@@ -669,13 +722,23 @@
                         <p class="text-xs font-semibold uppercase tracking-[0.18em] text-amber-200">Chef favorite</p>
                         <h3 class="font-heading mt-2 text-2xl text-white md:text-4xl">Balanced color, texture, and aroma</h3>
                     </div>
-                    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 justify-between">
-                        <a href="#slide2" class="btn btn-circle border-none bg-white/80 text-slate-800 hover:bg-white">&lt;</a>
-                        <a href="#slide4" class="btn btn-circle border-none bg-white/80 text-slate-800 hover:bg-white">&gt;</a>
+                    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 justify-between" role="group"
+                        aria-label="Carousel controls">
+                        <a href="#slide2" class="btn btn-circle border-none bg-white/80 text-slate-800 hover:bg-white"
+                            aria-label="Previous slide" aria-controls="slide2" title="Previous slide">
+                            <span aria-hidden="true">&lt;</span>
+                            <span class="visually-hidden">Previous slide</span>
+                        </a>
+                        <a href="#slide4" class="btn btn-circle border-none bg-white/80 text-slate-800 hover:bg-white"
+                            aria-label="Next slide" aria-controls="slide4" title="Next slide">
+                            <span aria-hidden="true">&gt;</span>
+                            <span class="visually-hidden">Next slide</span>
+                        </a>
                     </div>
                 </div>
 
-                <div id="slide4" class="carousel-item relative w-full">
+                <div id="slide4" class="carousel-item relative w-full"
+                    role="group" aria-roledescription="slide" aria-label="Slide 4 of 4: Packed for express delivery">
                     <img src="images/banner4.png" alt="Fresh fruits packed for delivery"
                         class="h-[280px] w-full object-cover md:h-[440px]" />
                     <div class="absolute inset-0 bg-gradient-to-r from-black/58 via-black/10 to-black/55"></div>
@@ -683,9 +746,18 @@
                         <p class="text-xs font-semibold uppercase tracking-[0.18em] text-amber-200">Express delivery</p>
                         <h3 class="font-heading mt-2 text-2xl text-white md:text-4xl">Packed fresh and delivered in hours</h3>
                     </div>
-                    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 justify-between">
-                        <a href="#slide3" class="btn btn-circle border-none bg-white/80 text-slate-800 hover:bg-white">&lt;</a>
-                        <a href="#slide1" class="btn btn-circle border-none bg-white/80 text-slate-800 hover:bg-white">&gt;</a>
+                    <div class="absolute left-5 right-5 top-1/2 flex -translate-y-1/2 justify-between" role="group"
+                        aria-label="Carousel controls">
+                        <a href="#slide3" class="btn btn-circle border-none bg-white/80 text-slate-800 hover:bg-white"
+                            aria-label="Previous slide" aria-controls="slide3" title="Previous slide">
+                            <span aria-hidden="true">&lt;</span>
+                            <span class="visually-hidden">Previous slide</span>
+                        </a>
+                        <a href="#slide1" class="btn btn-circle border-none bg-white/80 text-slate-800 hover:bg-white"
+                            aria-label="Next slide" aria-controls="slide1" title="Next slide">
+                            <span aria-hidden="true">&gt;</span>
+                            <span class="visually-hidden">Next slide</span>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -982,6 +1054,9 @@
                     <a class="hover:text-fruit-red" href="#shop">Shop</a>
                     <a class="hover:text-fruit-red" href="#team">Team</a>
                     <a class="hover:text-fruit-red" href="#support">Support</a>
+                    <a class="hover:text-fruit-red" href="about.html">About Page</a>
+                    <a class="hover:text-fruit-red" href="catalog.html">Catalog Page</a>
+                    <a class="hover:text-fruit-red" href="delivery.html">Delivery Page</a>
                 </div>
 
                 <div class="flex items-center gap-3 text-slate-700">
